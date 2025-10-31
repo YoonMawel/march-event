@@ -209,7 +209,7 @@ class CandyBot:
         left = self._cooldown_left(last_text)
         if left > 0:
             mins, secs = divmod(left, 60)
-            self._reply(status_id, acct, f"{display} 님, 쿨다운 남음: {mins}분 {secs}초.")
+            self._reply(status_id, acct, f"호박을 너무 많이 잡은 것 같다. 잠시 기다려 보자. \n\n 대기 시간 ― {mins}분 {secs}초")
             return
 
         # 스크립트 선택 → 꽝 여부/지급 개수 결정
