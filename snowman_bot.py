@@ -4,12 +4,13 @@ import re  # 정규표현식 모듈 추가
 from datetime import datetime, timedelta, MINYEAR
 import gspread
 from mastodon import Mastodon, StreamListener
+import os # os 모듈 추가
 
 # ==============================================================================
 # ⚙️ 설정값 및 데이터 구조 (여기를 실제 값으로 반드시 수정하세요!)
 # ==============================================================================
 MASTODON_INSTANCE = 'https://marchen1210d.site'
-ACCESS_TOKEN = '99WpPDjDzatu5KYfbRLEBQGMPleah-oKffEfLbVMa-k'
+ACCESS_TOKEN = '99WpPDjDzatu5KYfbRLEBQGMPleah-oKffEfLbVMa-k' # 실제 토큰으로 수정해야 함
 SHEET_NAME = '눈사람 굴리기 게임 데이터'
 SERVICE_ACCOUNT_FILE = 'service_account.json'
 
@@ -162,6 +163,8 @@ class SnowmanBot:
                 access_token=ACCESS_TOKEN,
                 api_base_url=MASTODON_INSTANCE
             )
+            # 봇 계정 정보를 미리 로드하여 중복 처리 방지에 사용
+            self.bot_acct = self.m.account_verify_credentials()['acct']
             print("마스토돈 인증 완료.")
         except Exception as e:
             print(f"마스토돈 연결/인증 오류: {e}")
@@ -413,6 +416,7 @@ class SnowmanBot:
 
         # 오류 메시지 수정: DB에 없는 사용자 ID
         if final_user_id is None:
+            # NOTE: DB에 없는 사용자에게 응답을 보낼 필요가 없다면 아래 3줄을 주석 처리할 수 있습니다.
             self.m.status_reply(status, "참여가 확인되지 않았습니다. 운영 계정(@MARCH)으로 문의해 주십시오.")
             return
 
@@ -423,7 +427,7 @@ class SnowmanBot:
                 break
 
         # ======================================================================
-        # 🚨 수정된 부분: 명령어 유효성 검사 및 응답 분기
+        # 🚨 명령어 유효성 검사 및 응답 분기
         # ======================================================================
         # 1. 툿에서 대괄호로 둘러싸인 텍스트가 있는지 정규식으로 확인
         bracketed_text_search = re.search(r'\[.*?\]', content)
@@ -529,20 +533,26 @@ class SnowmanBot:
             def __init__(self, bot_instance):
                 self.bot = bot_instance
 
+            # 멘션이 포함된 툿을 '알림(Notification)'을 통해 받아서 처리
             def on_notification(self, notification):
                 if notification['type'] == 'mention':
                     status = notification['status']
                     self.bot.handle_command(status)
 
+            # '업데이트(Update)'는 새로운 툿이 올라올 때 발생.
+            # on_notification과의 중복 방지를 위해 멘션에 대한 처리를 제거함.
             def on_update(self, status):
-                if status['in_reply_to_id'] is None and any(
-                        tag['acct'] == self.bot.m.account_verify_credentials()['acct'] for tag in status['mentions']):
-                    self.bot.handle_command(status)
+                # if status['in_reply_to_id'] is None and any( # ⚠️ 중복 유발 코드였음. 주석 또는 삭제하여 중복 응답을 방지.
+                #         tag['acct'] == self.bot.bot_acct for tag in status['mentions']):
+                #     self.bot.handle_command(status)
+                pass
 
             def on_error(self, error):
                 print(f"스트리밍 오류 발생: {error}")
 
         print("마스토돈 스트리밍 시작...")
+        # 봇 계정 ACCT 정보를 사용하여 on_update 로직에서 중복 검사를 할 수 있었지만,
+        # 가장 간단한 해결책은 on_update에서 멘션 처리를 완전히 제거하는 것임.
         self.m.stream_user(Listener(self), run_async=False, reconnect_async=True)
 
 
@@ -550,8 +560,6 @@ if __name__ == '__main__':
     print("--------------------------------------------------")
     print("⛄ 눈사람 협동 게임 자동봇 시작 준비")
     print("--------------------------------------------------")
-
-    import os
 
     if not os.path.exists(SERVICE_ACCOUNT_FILE):
         print(f"FATAL ERROR: {SERVICE_ACCOUNT_FILE} 파일을 찾을 수 없습니다. 구글 설정이 필요합니다.")
