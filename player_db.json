@@ -1,0 +1,236 @@
+{
+    "GarnetYeats": {
+        "sheet_name": "가넷&카인",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "KainCarter": {
+        "sheet_name": "가넷&카인",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "DENIZEUROCLYDON": {
+        "sheet_name": "데니즈&에디",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "ED_BB": {
+        "sheet_name": "데니즈&에디",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "DimyH": {
+        "sheet_name": "디미온&캐롤라인",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "Caroline": {
+        "sheet_name": "디미온&캐롤라인",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "Irving": {
+        "sheet_name": "레슬리&앤드류",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "Buzzwell": {
+        "sheet_name": "레슬리&앤드류",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "roxie": {
+        "sheet_name": "록사나&칼라일",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "Car_MurP": {
+        "sheet_name": "록사나&칼라일",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "taoyen_R": {
+        "sheet_name": "리&에인",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "AEON": {
+        "sheet_name": "리&에인",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "M4Y_4": {
+        "sheet_name": "마야&이리스",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "Iris": {
+        "sheet_name": "마야&이리스",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "Mildred_V_Mar": {
+        "sheet_name": "밀드리드&헤이즐",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "Hazel": {
+        "sheet_name": "밀드리드&헤이즐",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "Model_f_S": {
+        "sheet_name": "빈센트&세인테드",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "Version_f_V": {
+        "sheet_name": "빈센트&세인테드",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "SSS": {
+        "sheet_name": "샤히르&엘리아",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "Elia_DB": {
+        "sheet_name": "샤히르&엘리아",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "Edelweiss": {
+        "sheet_name": "시오&제인",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "jane": {
+        "sheet_name": "시오&제인",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "ASH": {
+        "sheet_name": "에피&칸디두스",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "CanVM": {
+        "sheet_name": "에피&칸디두스",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "Radiance": {
+        "sheet_name": "요하난&클레흐",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    },
+    "Ner": {
+        "sheet_name": "요하난&클레흐",
+        "role": "",
+        "col": "",
+        "cooldown_times": {
+            "snowman_cmd": "",
+            "decoration_cmd": ""
+        }
+    }
+}
